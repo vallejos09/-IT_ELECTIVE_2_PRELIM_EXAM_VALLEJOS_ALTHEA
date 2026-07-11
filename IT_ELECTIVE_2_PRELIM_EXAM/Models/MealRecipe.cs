@@ -47,3 +47,5 @@ public class MealRecipe : RecipeBase, IRecipeSearchable
         return Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase);
     }
 }
+
+
