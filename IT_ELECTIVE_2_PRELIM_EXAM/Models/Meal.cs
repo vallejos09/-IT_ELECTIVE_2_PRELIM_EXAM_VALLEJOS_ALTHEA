@@ -13,6 +13,7 @@ public class Meal
 {
     private string name;
     private string category;
+    public int PrepTimeMinutes { get; set; }
     private string area;
     private string instructions;
     private string thumbnail;
