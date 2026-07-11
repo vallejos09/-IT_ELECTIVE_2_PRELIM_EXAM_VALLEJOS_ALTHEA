@@ -26,6 +26,7 @@ public static class UpdateReview
             body = "Even better than before!",
             userId = 1
         };
+
         string jsonRequestBody = JsonSerializer.Serialize(updatedReviewData);
 
         using HttpContent content = new StringContent(jsonRequestBody, System.Text.Encoding.UTF8, "application/json");
@@ -41,6 +42,7 @@ public static class UpdateReview
         string? titleResult = root.GetProperty("title").GetString();
 
         Debug.Assert(titleResult == "Updated Review", $"Expected title 'Updated Review', but got '{titleResult}'");
+
         // TODO: Create JSON string with id, title, body, and userId
         // TODO: Create StringContent with the JSON and Content-Type "application/json"
         // TODO: Send PUT request to https://jsonplaceholder.typicode.com/posts/1
