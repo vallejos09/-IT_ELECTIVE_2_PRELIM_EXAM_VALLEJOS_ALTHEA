@@ -31,9 +31,6 @@ public static class GetRandomMeal
             throw new Exception("Response body is null or empty");
         }
 
-        Console.WriteLine("Request successful!");
-        Console.WriteLine(body);
-
         // TODO: Send GET request to https://themealdb.com/api/json/v1/1/random.php
         // TODO: Read the response content as a string
         // TODO: Assert status code is 200 OK
