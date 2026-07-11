@@ -16,11 +16,28 @@ public static class GetRandomMeal
 {
     public static async Task Run(System.Net.Http.HttpClient client)
     {
+        var url = "https://themealdb.com/api/json/v1/1/random.php";
+        var response = await client.GetAsync(url);
+
+        if (response.StatusCode != System.Net.HttpStatusCode.OK)
+        {
+            throw new Exception($"Expected status code 200 OK, but got {response.StatusCode}");
+        }
+
+        var body = await response.Content.ReadAsStringAsync();
+
+        if (string.IsNullOrWhiteSpace(body))
+        {
+            throw new Exception("Response body is null or empty");
+        }
+
+        Console.WriteLine("Request successful!");
+        Console.WriteLine(body);
+
         // TODO: Send GET request to https://themealdb.com/api/json/v1/1/random.php
         // TODO: Read the response content as a string
         // TODO: Assert status code is 200 OK
         // TODO: Assert response body is not null or empty
 
-        throw new NotImplementedException();
     }
 }
